@@ -13,6 +13,7 @@ import java.sql.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(of = {"id"})
 public class Experience {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

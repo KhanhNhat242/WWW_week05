@@ -11,6 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@@EqualsAndHashCode(of = {"id"})
 public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

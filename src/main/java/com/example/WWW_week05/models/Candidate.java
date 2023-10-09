@@ -14,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@EqualsAndHashCode(of = {"id"})
 public class Candidate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
