@@ -1,6 +1,7 @@
 package com.example.WWW_week05.models;
 
 import com.example.WWW_week05.enums.SkillLevel;
+import com.example.WWW_week05.id.CandidateSkillID;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,19 +13,21 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@IdClass(CandidateSkillID.class)
 public class CandidateSkill {
     @Column(name = "more_infos", length = 1000)
     private String moreInfos;
     @Column(name = "skill_level", length = 4)
     private SkillLevel skillLevel;
 
-    @OneToOne
-    @JoinColumn(name = "skill_id")
-    @Column(name = "skill_id", length = 20)
-    private Skill skillId;
-
+    @Id
     @OneToOne
     @JoinColumn(name = "can_id")
-    @Column(name = "can_id", length = 20)
     private Candidate canId;
+
+    @Id
+    @OneToOne
+    @JoinColumn(name = "skill_id")
+    private Skill skillId;
+
 }

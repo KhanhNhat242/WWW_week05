@@ -11,7 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@@EqualsAndHashCode(of = {"id"})
+@EqualsAndHashCode(of = {"id"})
 public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +22,6 @@ public class Job {
 
     @ManyToOne
     @JoinColumn(name = "comp_id")
-    @Column(length = 20)
     private Company company;
 
     public Job(String jobName, Company company) {

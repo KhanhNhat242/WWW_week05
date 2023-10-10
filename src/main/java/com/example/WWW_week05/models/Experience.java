@@ -30,7 +30,6 @@ public class Experience {
 
     @OneToOne
     @JoinColumn(name = "id")
-    @Column(name = "candidate_id", length = 20)
     private Candidate candidateId;
 
     public Experience(String company, Date fromDate, String role, Date toDate, String workDesc, Candidate candidateId) {
