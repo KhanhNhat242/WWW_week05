@@ -3,7 +3,7 @@ package com.example.WWW_week05.models;
 import com.example.WWW_week05.enums.SkillType;
 import jakarta.persistence.*;
 import lombok.*;
-@Table(name = "experience")
+@Table(name = "skill")
 @Getter
 @Setter
 @ToString

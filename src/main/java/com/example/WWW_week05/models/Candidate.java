@@ -28,12 +28,11 @@ public class Candidate {
     @Column(length = 15)
     private String phone;
 
-    @OneToMany
-    @JoinColumn(name = "id")
-    @Column(length = 20)
-    private List<Address> address;
+    @OneToOne
+    @JoinColumn(name = "add_id")
+    private Address address;
 
-    public Candidate(Date dob, String email, String fullName, String phone, List<Address> address) {
+    public Candidate(Date dob, String email, String fullName, String phone, Address address) {
         this.dob = dob;
         this.email = email;
         this.fullName = fullName;
