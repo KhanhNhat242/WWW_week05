@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CompanyService {
@@ -26,5 +27,14 @@ public class CompanyService {
 
     public List<Company> getAll(){
         return companyRepository.findAll();
+    }
+
+    public Company findByEmail(String email){
+//        Company c = null;
+//        c = companyRepository.findCompanyByEmail(email);
+//        if(c != null)
+//            return true;
+//        return false;
+        return companyRepository.findCompanyByEmail(email);
     }
 }

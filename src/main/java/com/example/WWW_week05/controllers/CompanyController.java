@@ -22,4 +22,14 @@ public class CompanyController {
     public List<Company> getAll(){
         return companyService.getAll();
     }
+
+    @PostMapping("/checkLogin")
+    public Boolean checkLogin(@RequestBody String email){
+//        System.out.println(email.substring(1, email.length()-1));
+        String e = email.substring(1, email.length()-1);
+//        System.out.println(companyService.findByEmail(e));
+        if(companyService.findByEmail(e) != null)
+            return true;
+        return false;
+    }
 }
