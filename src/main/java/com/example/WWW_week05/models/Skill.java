@@ -21,9 +21,12 @@ public class Skill {
     private String skillDesc;
     @Column(name = "skill_type", length = 4)
     private SkillType skillType;
+    @Column(name = "skill_name", length = 150)
+    private String skillName;
 
-    public Skill(String skillDesc, SkillType skillType) {
+    public Skill(String skillDesc, SkillType skillType, String skillName) {
         this.skillDesc = skillDesc;
         this.skillType = skillType;
+        this.skillName = skillName;
     }
 }

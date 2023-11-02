@@ -13,13 +13,15 @@ public class JobController {
     @Autowired
     private JobService jobService;
 
-    @PostMapping("/addJob")
-    public void add(@RequestBody Job j){
-        jobService.createOrUpdate(j);
-    }
+//    @PostMapping("/addJob")
+//    public void add(@RequestBody Job j){
+//        jobService.createOrUpdate(j);
+//    }
 
     @GetMapping("/getAllJob")
     public List<Job> getAll(){
         return jobService.getAll();
     }
+
+
 }

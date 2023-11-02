@@ -13,7 +13,6 @@ import java.util.List;
 @ToString
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @IdClass(JobSkillID.class)
 public class JobSkill {
@@ -31,4 +30,11 @@ public class JobSkill {
     @ManyToOne
     @JoinColumn(name = "job_id")
     private Job jobId;
+
+    public JobSkill(String moreInfos, SkillLevel skillLevel, Skill skillId, Job jobId) {
+        this.moreInfos = moreInfos;
+        this.skillLevel = skillLevel;
+        this.skillId = skillId;
+        this.jobId = jobId;
+    }
 }

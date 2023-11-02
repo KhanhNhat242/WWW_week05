@@ -19,13 +19,16 @@ public class Job {
     private long id;
     @Column(name = "job_name", length = 255)
     private String jobName;
+    @Column(name = "job_desc", length = 200)
+    private String jobDesc;
 
     @ManyToOne
     @JoinColumn(name = "comp_id")
     private Company company;
 
-    public Job(String jobName, Company company) {
+    public Job(String jobName, String jobDesc, Company company) {
         this.jobName = jobName;
+        this.jobDesc = jobDesc;
         this.company = company;
     }
 }
