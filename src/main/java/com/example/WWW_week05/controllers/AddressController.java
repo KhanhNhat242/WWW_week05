@@ -14,11 +14,11 @@ public class AddressController {
     @Autowired
     private AddressService addressService;
 
-    @PostMapping("/addAddress")
-    public Address save(@RequestBody Address a){
-//        Address add = new Address("sdg", "asd",);
-        return addressService.createOrUpdate(a);
-    }
+//    @PostMapping("/addAddress")
+//    public Address save(@RequestBody Address a){
+////        Address add = new Address("sdg", "asd",);
+//        return addressService.createOrUpdate(a);
+//    }
 
     @GetMapping("/findAllAddress")
     public List<Address> findAll(){

@@ -2,10 +2,7 @@ package com.example.WWW_week05.controllers;
 
 import com.example.WWW_week05.enums.Country;
 import com.example.WWW_week05.models.*;
-import com.example.WWW_week05.services.CompanyService;
-import com.example.WWW_week05.services.JobService;
-import com.example.WWW_week05.services.JobSkillService;
-import com.example.WWW_week05.services.SkillService;
+import com.example.WWW_week05.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,13 +19,22 @@ public class CompanyController {
     private SkillService skillService;
     @Autowired
     private JobSkillService jobSkillService;
+    @Autowired
+    private AddressService addressService;
     private Company currentCompany;
     private Job currentJob;
     private Skill currentSkill;
+    private Address currentAddress;
+    @PostMapping("/addAddress")
+    public void addAddress(@RequestBody Address a){
+        addressService.createOrUpdate(a);
+        currentAddress = a;
+    }
 
     @PostMapping("/addCompany")
-    public void add(@RequestBody Company c){
-        companyService.createOrUpdate(c);
+    public void addCompany(@RequestBody Company c){
+        Company com = new Company(c.getAbout(), c.getEmail(), c.getCompName(), c.getPhone(), c.getWebUrl(), currentAddress);
+        companyService.createOrUpdate(com);
     }
 
     @GetMapping("/getAllCompany")
@@ -63,6 +69,6 @@ public class CompanyController {
     @PostMapping("/addJobSkill")
     public void addJobSkill(@RequestBody JobSkill jobSkill){
         JobSkill jk = new JobSkill(jobSkill.getMoreInfos(), jobSkill.getSkillLevel(), currentSkill, currentJob);
-        jobSkillService.createOrUpdat(jk);
+        jobSkillService.createOrUpdate(jk);
     }
 }
