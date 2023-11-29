@@ -6,7 +6,7 @@
 
 <ul>
   <li>Step 1</li>
-  Start your HeidiSQL at port 3306
+  Start your HeidiSQL at port 3306 then creat new database with name <i>jobdb</i>
   <li>Step 2</li>
   Clone this project. After clone open project in your IDE then build project to download all dependency. After build completed you can run this project
   <li>Step 3</li>
